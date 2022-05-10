@@ -1,0 +1,104 @@
+
+jinja2로 모달 창까지 포함하여 for문을 돌려 오류가 났음
+모달에 id=num을 부여하여 중복 해결
+
+오늘 고생한 코드 :
+
+<div class="row row-cols-md-3 g-4">
+    {% for movie in posts %}
+        {% set title=movie.title %}
+        {% set photo=movie.photo %}
+        {% set director=movie.director %}
+        {% set date=movie.date %}
+        {% set actor=movie.actor %}
+        {% set comment=movie.comment %}
+        {% set num=movie.num %}
+        <div class="wrap">
+            <div id="cards_box">
+                <div class="col">
+                    <div class="card h-100">
+                        <a data-bs-toggle="modal" class="btn btn-dark" data-bs-toggle="modal"
+                           data-bs-target="[id='{{ num }}']"><IMG
+                                src="https://movie-phinf.pstatic.net/20220502_133/1651477956146xLruh_JPEG/movie_image.jpg?type=m203_290_2"
+                                border="0"
+                                class="card-img-top pointer"
+                                alt="..."></a>
+                        <div class="card-body">
+                            <h5 class="card_title">{{ title }}</h5>
+                            <nav class="level is-mobile">
+                        <div class="level-left">
+                            <a class="level-item is-sparta" aria-label="heart" onclick="toggle_like('', 'heart')">
+                                <span class="icon is-small"><i class="fa fa-heart" aria-hidden="true"></i>
+                                </span>&nbsp;<span class="like-num">2.7k</span>
+                            </a>
+                        </div>
+
+                    </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="{{ num }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">{{ title }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card h-100">
+                            <a><IMG src="{{ photo }}"
+                                    border="0"
+                                    class="card-img-top"
+                                    alt="..."></a>
+                            <div class="card-body">
+                                <p class="card_address">
+                                <p>{{ actor }}배우</p>
+                                <p>{{ director }}감독</p>
+                                <p>{{ date }}개봉날짜</p>
+                                <p>{{ comment }}시놉시스</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+set으로 변수 정의 안해도 될 것 같은데 시도 과정에서 너무 고생해서 그대로 둠..
+
+for문 돌린 후 부트스트랩 카드가 세로로 붙어서 해결 :
+<div class="row row-cols-md-3 g-4"> 클래스를 for 문 밖에둠,
+.row {
+            margin: 20px auto 0px auto;
+            width: 95%;
+            max-width: 1200px;
+            padding-bottom: 20px;
+        }
+그리고 그 태그의 스타일
+
+기록하기 빈칸 있을 때 db에 저장 안하게 하는 코드 :
+function save_movie() {
+            if (($('#photo').val() | $('#title').val() | $('#actor').val() | $('#director').val() | $('#date').val() | $('#comment').val()) == "") {
+                alert("빈칸이 있습니다.")
+                return
+            }
+
+괄호 하나하나가 소중하다.
+
+내일 할 것
+좋아요 버튼 jinja로 구현이 가능한가
+jinja와 ajax 섞어서 쓸 수 없어보이는데 가능한가
+
+시간되면 git md사용법 및 git공부
+
+
+
+
+참고자료 : 모달 데이터 창 중복해결 https://kgu0724.tistory.com/208
