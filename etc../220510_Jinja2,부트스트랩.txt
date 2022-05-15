@@ -90,15 +90,4 @@ function save_movie() {
                 return
             }
 
-괄호 하나하나가 소중하다.
-
-내일 할 것
-좋아요 버튼 jinja로 구현이 가능한가
-jinja와 ajax 섞어서 쓸 수 없어보이는데 가능한가
-
-시간되면 git md사용법 및 git공부
-
-
-
-
 참고자료 : 모달 데이터 창 중복해결 https://kgu0724.tistory.com/208
