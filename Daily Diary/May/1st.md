@@ -121,3 +121,16 @@ else: count = movie_list[0]["num"] + 1
 > - 추상클래스, 인터페이스, 객체, 클래스, 다형성(인터페이스)<br>
 > - 배열, 리스트 , Stream , Math<br>
 > - Math 공부
+
+# 날짜 220515
+
+### 배운 것
+1. interface는 method를 강제한다
+2. abstract는 상속을 강제한다.
+3. overloading은 같은이름에 다른 동작 방법일 때 사용 가능하다.
+4. Math는 클래스
+
+#### 다음 날 할 것
+> - Spring과제 배운 개념토대로 다시 짜보기.
+> - OOP(Object Oriented Programming : 객체지향 프로그래밍)에 대해서는 계속 공부(안 보고도 활용할 수 있도록)
+> - 시간남으면 Stream공부
